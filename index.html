@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>☁ WeatherPro</h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter City">
+
+            <button onclick="getWeather()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+
+        </div>
+
+        <div class="menu">
+
+            <button onclick="showMessage('Dashboard Opened')">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </button>
+
+            <button onclick="showMessage('Forecast Loaded')">
+                <i class="fa-solid fa-cloud"></i>
+                Forecast
+            </button>
+
+            <button onclick="showMessage('Weather Alerts')">
+                <i class="fa-solid fa-bell"></i>
+                Alerts
+            </button>
+
+            <button onclick="toggleDarkMode()">
+                <i class="fa-solid fa-moon"></i>
+                Dark Mode
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main">
+
+        <div class="top-bar">
+
+            <h1>Weather Dashboard</h1>
+
+            <div id="clock"></div>
+
+        </div>
+
+        <!-- Current Weather -->
+
+        <div class="weather-main">
+
+            <div class="weather-card big">
+
+                <h2 id="cityName">Loading...</h2>
+
+                <img
+                    id="weatherIcon"
+                    src="https://openweathermap.org/img/wn/01d@2x.png"
+                    alt="Weather Icon">
+
+                <h1 id="temperature">--°C</h1>
+
+                <p id="description">
+                    Loading Weather...
+                </p>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h3>Humidity</h3>
+
+                <h2 id="humidity">--%</h2>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h3>Wind Speed</h3>
+
+                <h2 id="wind">-- km/h</h2>
+
+            </div>
+
+        </div>
+
+        <!-- Analytics -->
+
+        <div class="analytics">
+
+            <div class="weather-card">
+
+                <h3>UV Index</h3>
+
+                <h2>7.5</h2>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h3>Air Quality</h3>
+
+                <h2>Good</h2>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h3>Sunrise</h3>
+
+                <h2 id="sunrise">06:01 AM</h2>
+
+            </div>
+
+            <div class="weather-card">
+
+                <h3>Sunset</h3>
+
+                <h2 id="sunset">06:38 PM</h2>
+
+            </div>
+
+        </div>
+
+        <!-- 5 Day Forecast -->
+
+        <h2 class="forecast-title">5-Day Forecast</h2>
+
+        <div class="forecast">
+
+            <div class="forecast-card">
+                <h3>Mon</h3>
+                <p>30°C</p>
+            </div>
+
+            <div class="forecast-card">
+                <h3>Tue</h3>
+                <p>31°C</p>
+            </div>
+
+            <div class="forecast-card">
+                <h3>Wed</h3>
+                <p>29°C</p>
+            </div>
+
+            <div class="forecast-card">
+                <h3>Thu</h3>
+                <p>32°C</p>
+            </div>
+
+            <div class="forecast-card">
+                <h3>Fri</h3>
+                <p>28°C</p>
+            </div>
+
+        </div>
+
+        <!-- Hourly Forecast -->
+
+        <h2 class="forecast-title">Hourly Forecast</h2>
+
+        <div class="hourly">
+
+            <div class="hour-card">09 AM - 28°C</div>
+            <div class="hour-card">12 PM - 31°C</div>
+            <div class="hour-card">03 PM - 33°C</div>
+            <div class="hour-card">06 PM - 29°C</div>
+            <div class="hour-card">09 PM - 26°C</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
